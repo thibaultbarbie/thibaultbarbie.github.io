@@ -29,8 +29,10 @@ We can translate the previous collision conditions into math:
 + $|CA|^2\le r^2$ or $|CB|\le r^2$
 + $|CH|^2\le r^2$ and $\langle CA , CB\rangle \le 0$. 
 
-We begin by writing some helpful variables:
+Our function begins with some helpful variables:
 ```
+Dot ← +´∘×
+
 ColSegmentsCircles ← { 
  [a,b] ← 1⍉𝕩 ⋄ c‿r ← 𝕨 ⋄ r_squared ← r⋆2 
  ca  ← {𝕩 -⎉1 c}⎉1 a ⋄ cb  ← {𝕩 -⎉1 c}⎉1 b
@@ -64,6 +66,8 @@ We named the distance $|CH|$ *d_squared* in our code. We have a collision if $|C
 Our final program is:
 
 ```
+Dot ← +´∘×
+
 # 𝕩≢n‿2‿2    𝕨≢⟨k‿2, k⟩
 ColSegmentsCircles ← { 
  [a,b] ← 1⍉𝕩 ⋄ c‿r ← 𝕨 ⋄ r_squared ← r⋆2 
